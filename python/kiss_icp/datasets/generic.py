@@ -30,7 +30,7 @@ import numpy as np
 from kiss_icp.datasets import supported_file_extensions
 
 
-class GenericDataset:
+class AEIFDataset:
     def __init__(self, data_dir: Path, *_, **__):
         # Config stuff
         self.sequence_id = os.path.basename(os.path.abspath(data_dir))
