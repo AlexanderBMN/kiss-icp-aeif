@@ -100,7 +100,7 @@ class OdometryPipeline:
         for idx in get_progress_bar(self._first, self._last):
             raw_frame, timestamps = self._next(idx)
             start_time = time.perf_counter_ns()
-            source, keypoints = self.odometry.register_frame(raw_frame, timestamps, self._dataset, idx)
+            source, keypoints = self.odometry.register_frame(raw_frame, timestamps)
             self.poses[idx - self._first] = self.odometry.last_pose
             self.times[idx - self._first] = time.perf_counter_ns() - start_time
 
